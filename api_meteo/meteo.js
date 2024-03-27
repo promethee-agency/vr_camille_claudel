@@ -55,7 +55,7 @@ function errorCallback(error) {
     // Gérez les erreurs selon vos besoins.
 
     // RECUPERER LES DONNES AVEC L'API AVEC UN LIEU DEFINI ICI LONDRES
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=25.0772&longitude=55.3093&current=is_day,rain,weather_code,cloud_cover&hourly=rain,weather_code,is_day,sunshine_duration&daily=sunrise,sunset&forecast_days=1`)
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.6&current=is_day,rain,weather_code,cloud_cover&hourly=rain,weather_code,is_day,sunshine_duration&daily=sunrise,sunset&forecast_days=1`)
     .then(response => response.json())
     .then(data => {
         console.log(data);

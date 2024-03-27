@@ -38,9 +38,31 @@ class App
 		scene1.setSeasonImage('winter', 'sunset','./img/hiver_coucher_soleil.jpg');
 		scene1.setSeasonImage('winter','night', './img/ete_nuit2.jpg');
 		scene1.setCameraFov(100);
-
 		scene1.sceneName = 'scene1';
-		scene1.enableRain(true);
+
+
+	fetch(`https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.6&current=is_day,rain,weather_code,cloud_cover&hourly=rain,weather_code,is_day,sunshine_duration&daily=sunrise,sunset&forecast_days=1`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);    
+
+        // FUNCTION TO KNOW IF IT'S RAINY OR SUNNY
+        function isRainy (data) {
+            let rain;
+            if (data["current"]["rain"] > 0) {
+                rain = true;
+            } else {
+                rain = false;
+            }
+            return rain;
+        }
+
+		if (isRainy(data)) {
+			scene1.enableRain(true);
+		}
+	})
+		
+		
 
 		
 		// AUDIO
