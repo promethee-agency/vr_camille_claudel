@@ -1,0 +1,40 @@
+/* testing purposes */
+body {
+    margin: 0;
+}
+
+body .container button.next {
+    position: absolute;
+    right: 2rem;
+    bottom: 3rem;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 5rem;
+    background-color: var(--primary-600);
+    color: var(--base-0);
+    transition: background-color ease-out 0.3s;
+}
+
+body .container button#playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 5rem;
+    background-color: var(--primary-50);
+    color: var(--base-950);
+    transition: background-color ease-out 0.3s;
+}
+
+body .container button#playButton:hover {
+    background-color: var(--primary-600);
+    color: var(--base-0);
+}
+
+body .container button.next:hover {
+    background-color: var(--primary-900);
+}
